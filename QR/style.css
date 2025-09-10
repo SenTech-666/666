@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input,button{
+    border: none;
+}
+body {
+    font-family: Arial,sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    background: #356;
+}
+.generator{
+    background: #9999 ;
+   * backdrop-filter: blur(14,399px);
+   border: 1px solid rgba(255.255.255.0.9);
+   border-radius: 48px;
+   padding: 48px 50px;
+   flex: 0 1 710px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   column-gap: 15px;
+}
+
+.generator_left{
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 248px;
+}
+.generator_title
+{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.generator_item{
+    margin-bottom: 20px;
+}
+.generator_label{
+    display: block;
+    margin-bottom: 10px;
+}
+.generator_input{
+    width: 100%;
+    border-radius: 25px;
+    background: rgb(43, 56, 68);
+    padding: 6px 15px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+}
+
+.generator_btn{
+    border-radius: 25px;
+    background-color: #356;
+    padding: 9px 40px;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition:background-color 0.3s ;
+}
+.generator_btn:hover{
+    background-color: #278;
+}
+.generator_btn--small{
+    width: 200px;
+    align-self: center;
+    font-size: 18px;
+}
+.generator_right{
+    flex: 0 1 330px;
+}
+.generator_qr-code{
+    width: 330px;
+    height: 330px;
+    padding: 18px;
+    border-radius: 25px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generator_radio-group{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+.generator_radio{
+    display: none;
+}
+.generator_radio-label{
+    border-radius: 5px;
+    cursor: pointer;
+    background: #356 ;
+    padding: 6px 15px;
+   user-select: none;
+   color: rgba(255, 255, 255, 0.4);
+   border-radius: 25px;
+   transition: color 0.3s;
+}
+
+.generator_radio:checked + .generator_radio-label {
+    color: #fff;
+}
