@@ -18,7 +18,7 @@ body {
 }
 .generator{
     background: #9999 ;
-   * backdrop-filter: blur(14,399px);
+   backdrop-filter: blur(14,399px);
    border: 1px solid rgba(255.255.255.0.9);
    border-radius: 48px;
    padding: 48px 50px;

@@ -1,40 +1,42 @@
+// Получаем элементы DOM
 const generateBtn = document.getElementById('generate');
 const downloadBtn = document.getElementById('download');
 
-
 const generateQRcode = () => {
-    const text = document.getElementById('text-url').value.trim
-    ();
-    if(!text) {
+    // Получаем и очищаем введенный текст
+    const text = document.getElementById('text-url').value.trim();
+    
+    if (!text) {
         alert('Введите URL или текст');
         return;
     }
 
-    const size = parseInt(document.querySelector("input [name='qr-size']:checed").value) || 200;
+    // Получаем размер QR-кода
+    const size = parseInt(document.querySelector("input[name='qr-size']:checked").value) || 200;
 
+    // Получаем canvas и контекст
     const canvas = document.getElementById('qrcode');
     const ctx = canvas.getContext('2d');
     
-    canvas.wigth = size;
-    canvas.heitght = size;
+    // Исправляем опечатки в свойствах width и height
+    canvas.width = size;
+    canvas.height = size;
 
-ctx.clearRect(0,0,canvas.wigth,canvas.heitght);
- 
+    // Очищаем canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-const qr = new QRious({
-  level: 'H',
-  size: size,
-  value: text
-});
+    // Создаем QR-код
+    const qr = new QRious({
+        element: canvas,  // Добавляем элемент canvas
+        level: 'H',
+        size: size,
+        value: text
+    });
 
-const img = new Image();
-img.src = qr.toDataURL();
-
-img.onload = () => {
-    ctx.drawImage(img,0,0,size,size)
+    // Добавляем возможность скачивания
+    downloadBtn.href = qr.toDataURL('image/png');
+    downloadBtn.download = 'qrcode.png';
 };
 
-}
-
-
-generateBtn.addEventListener('click',generateBtn);
+// Добавляем обработчик события
+generateBtn.addEventListener('click', generateQRcode);
