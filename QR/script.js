@@ -5,6 +5,8 @@ const downloadBtn = document.getElementById('download');
 const generateQRcode = () => {
     // Получаем и очищаем введенный текст
     const text = document.getElementById('text-url').value.trim();
+
+    const encodedText = unescape(encodeURIComponent(text)) 
     
     if (!text) {
         alert('Введите URL или текст');
@@ -30,7 +32,7 @@ const generateQRcode = () => {
         element: canvas,  // Добавляем элемент canvas
         level: 'H',
         size: size,
-        value: text
+        value: encodedText
     });
 
     // Добавляем возможность скачивания
@@ -38,5 +40,14 @@ const generateQRcode = () => {
     downloadBtn.download = 'qrcode.png';
 };
 
+const downloadQRcode = () => {
+    const canvas = document.getElementById('qrcode');
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'qrcode.png';
+    link.click();
+}
+
 // Добавляем обработчик события
 generateBtn.addEventListener('click', generateQRcode);
+downloadBtn.addEventListener('click',downloadQRcode);
