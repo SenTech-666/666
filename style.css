@@ -5,8 +5,15 @@
 }
 
 body{
-    background: #333;
-    color: #f8f9fa;
+    
+    color: #e7f3ff;
+    .selector {
+    background: url('../33355.jpg') 
+                no-repeat 
+                center / cover;
+    background-color: #413838; /* резервный цвет */
+    height: 100vh; /* высота на весь экран */
+}
 }
 header {
     display: flex;
@@ -59,13 +66,35 @@ ol a:hover {
     color: #08ee4d;
 }
 
-.container {
- display: flex;
- align-items: center;
- width: 100%;
- padding: 40px; /* добавили отступ 20px со всех сторон */
- box-sizing: border-box; /* учитываем padding в ширине элемента */
+.content {
+    text-align: center; /* Центрируем всё содержимое */
 }
+
+.title {
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.about-section {
+    display: flex; /* Используем flex для выравнивания */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Расстояние между изображением и текстом */
+}
+
+.image-container img {
+    border-radius: 50%; /* Делаем изображение круглым */
+    object-fit: cover;
+}
+
+.image-container p {
+    margin: 0; /* Убираем отступы у параграфа */
+}
+
 
 h1 {
  color: #08ee4d; /* темный синий цвет */
@@ -80,8 +109,12 @@ h3 {
  margin: 0;
 }
 
+.content{
+    
+}
+
 /* Общие стили для всех секций */
-.about_me,
+.about-section,
 .stack,
 .soft,
 .contacts {
