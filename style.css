@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background: #333;
+    color: #f8f9fa;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #0056b3;
+}
+
+ol {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+ol li {
+    font-size: 1rem;
+}
+
+ol li::before  {
+     content: '<';
+    color: #08ee4d;
+    margin-right: 5px;
+}
+ol li::after {
+    content: '>';
+    color: #08ee4d;
+    margin-left: 5px;
+}
+ol a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ol a:hover {
+    color: #08ee4d;
+}
+
+.container {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ padding: 40px; /* добавили отступ 20px со всех сторон */
+ box-sizing: border-box; /* учитываем padding в ширине элемента */
+}
+
+h1 {
+ color: #08ee4d; /* темный синий цвет */
+ font-size: 2.5rem;
+ margin: 0;
+ margin-right: 20px; /* отступ между строками */
+}
+
+h3 {
+ color: #7f8c8d; /* серый цвет */
+ font-size: 1.5rem;
+ margin: 0;
+}
+
+/* Общие стили для всех секций */
+.about_me,
+.stack,
+.soft,
+.contacts {
+    width: 80%; /* Ширина блоков */
+    margin: 20px auto; /* Отступы сверху/снизу и выравнивание по центру */
+    padding: 20px;
+    
+    border-radius: 8px;
+    
+}
+
+/* Стили для заголовков */
+h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для параграфов */
+p {
+    color: #f0e9e9;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Стили для секции контактов */
+.contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts_info {
+    width: 70%;
+    padding: 20px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .about_me,
+    .stack,
+    .soft,
+    .contacts {
+        width: 90%;
+    }
+    
+    .contacts {
+        flex-direction: column;
+    }
+    
+    .contacts_info {
+        width: 100%;
+    }
+}
+
+/* Дополнительные улучшения */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Анимация появления */
+.about_me,
+.stack,
+.soft,
+.contacts {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+
+
+
+
+/* Для отступа в 1/3 ширины экрана с учетом padding */
+@media (min-width: 768px) {
+.container {
+ justify-content: flex-end;
+ padding-left: calc((100% / 3) + 20px); /* учли padding */
+ }
+}
